@@ -30,7 +30,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1px;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -60,23 +60,24 @@ body {
 
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+
 }
 
 .profile {
-  width: 46px;
-  height: 46px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
+
+
 
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
-.ai .profile {
-  background: #10a37f;
-}
+
 
 .profile img {
   width: 60%;
@@ -91,7 +92,6 @@ body {
   font-size: 17px;
 
   max-width: 100%;
-  overflow-x: scroll;
 
   /*
    * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
@@ -100,7 +100,6 @@ body {
    * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
   */
   white-space: pre-wrap; 
-
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -116,18 +115,18 @@ form {
   margin: 0 auto;
   padding: 10px;
   background: #40414F;
-  border-radius: 15px;
+
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-bottom: 25px;
 }
 
 textarea {
   width: 100%;
 
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
+
   padding: 10px;
   background: transparent;
   border-radius: 5px;

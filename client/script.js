@@ -1,5 +1,6 @@
 import user from "./assets/user.png";
-import bot from "./assets/bot.png";
+import bot from "./assets/robot.gif";
+
 
 const form = document.querySelector("form");
 const chatContainer = document.querySelector("#chat_container");
@@ -11,7 +12,7 @@ function loader(element) {
 
   loadInterval = setInterval(() => {
     element.textContent += ".";
-    if (element.textContent === "....") {
+    if (element.textContent === ".....") {
       element.textContent = "";
     }
   }, 300);
@@ -34,30 +35,28 @@ function generateUniqueID() {
   const timestamp = Date.now();
   const ramdomNumber = Math.random();
   const hexadecimalString = ramdomNumber.toString(16);
-
   return `id-${timestamp}-${hexadecimalString}`;
 }
 
-function chatStripe(isAI, value, uniqueID) {
-  return `
-    <div class="wrapper ${isAI && "ai"}>
+function chatStripe(isAi, value, uniqueID) {
+  return (`
+    <div class="wrapper ${isAi && "ai"}">
     <div class="chat">
 
     <div class="profile">
-    <img src="${isAI ? bot : user}" alt="${isAI ? "bot" : "user"}" />
+    <img src=${isAi ? bot : user} alt="${isAi ? "bot" : "user"}" />
     </div>
 
     <div class="message" id=${uniqueID}>
-    ${value}
+        ${value}
     </div>
 
     </div>
     </div>
-    `;
+    `)
 }
 
 const handleSubmit = async (e) => {
-
   e.preventDefault();
   const data = new FormData(form);
 
@@ -83,6 +82,7 @@ const handleSubmit = async (e) => {
     body: JSON.stringify({
       prompt: data.get('prompt')
     })
+
   })
 
   clearInterval(loadInterval);

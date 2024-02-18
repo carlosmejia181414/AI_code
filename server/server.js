@@ -5,8 +5,6 @@ import OpenAI from "openai";
 
 dotenv.config();
 
-console.log(process.env.OPENAI_API_KEY);
-
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -17,15 +15,14 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
     res.status(200).send({
-        message: "hellooooooooooooo"
+        message: "Server is working..."
     })
 });
 
 app.post('/', async (req, res) => {
     try {
         const prompt = req.body.prompt;
-console.log(prompt);
-        const response = await openai.chat.completions.create({
+        const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [
               {
@@ -40,10 +37,9 @@ console.log(prompt);
             presence_penalty: 0,    
         });
         res.status(200).send({
-            bot: response.data.text
+            bot: completion.choices[0].message.content
         });
     } catch (error) {
-        console.log("Error en la solicitud POST:", error);
         res.status(500).send({ error: "Error interno del servidor" });
     }
 })
