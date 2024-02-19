@@ -84,7 +84,13 @@ body {
   padding: 10px;
   margin: 10px;
   text-align: center;
+}
 
+.footer2{
+  color: #dcdcdc;
+  font-size: 14px;
+
+  text-align: center;
 }
 
 .header{
@@ -93,8 +99,6 @@ body {
   padding-top: 10px;
   margin-top: 5px;
   text-align: center;
-
-
 }
 
 
@@ -108,7 +112,7 @@ body {
   flex: 1;
 
   color: #dcdcdc;
-  font-size: 16px;
+  font-size: 15px;
 
   max-width: 100%;
 
