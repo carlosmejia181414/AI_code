@@ -47,9 +47,7 @@ function chatStripe(isAi, value, uniqueID) {
     <img src=${isAi ? bot : user} alt="${isAi ? "bot" : "user"}" />
     </div>
 
-    <div class="message" id=${uniqueID}>
-        ${value}
-    </div>
+    <div class="message" id=${uniqueID}>${value}</div>
 
     </div>
     </div>
@@ -74,7 +72,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   //fetch data from server
-  const response = await fetch('https://carlosai.onrender.com/', {
+  const response = await fetch('http://localhost:5000', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
