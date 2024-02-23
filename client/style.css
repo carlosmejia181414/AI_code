@@ -50,6 +50,10 @@ body {
   padding: 15px;
 }
 
+.logo{
+  height: 65px;
+}
+
 .ai {
   background: #40414F;
 }
