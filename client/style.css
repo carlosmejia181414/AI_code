@@ -90,7 +90,6 @@ body {
 .footer2{
   color: #dcdcdc;
   font-size: 14px;
-
   text-align: center;
 }
 
@@ -107,6 +106,22 @@ body {
   width: 60%;
   height: 60%;
   object-fit: contain;
+}
+
+.typewrite {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
 }
 
 .message {

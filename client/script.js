@@ -1,5 +1,7 @@
 import user from "./assets/user.png";
 import bot from "./assets/robot.gif";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 const form = document.querySelector("form");
